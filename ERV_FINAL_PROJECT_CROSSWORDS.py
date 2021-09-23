@@ -17,9 +17,9 @@ from simpleimage import SimpleImage
 import string
 import json
 
-NUMBER_OF_CROSSWORDS = 3  # number of crosswords
+NUMBER_OF_CROSSWORDS = 4  # number of crosswords
 OVERTIME_LIMIT = 10  # the number of seconds after which the word shuffling starts (in the hope of a faster search for the desired combination)
-OVERTIME_COUNTER_LIMIT = 10  # the number of shuffles, after which the task starts to go by itself until it finds the desired option, or reports that it does not exist
+OVERTIME_COUNTER_LIMIT = 100  # the number of shuffles, after which the task starts to go by itself until it finds the desired option, or reports that it does not exist
 DICT = "nounlist.txt"  # file with words
 
 
