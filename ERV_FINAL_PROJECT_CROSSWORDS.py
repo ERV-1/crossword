@@ -20,7 +20,7 @@ import json
 NUMBER_OF_CROSSWORDS = 4  # number of crosswords
 OVERTIME_LIMIT = 10  # the number of seconds after which the word shuffling starts (in the hope of a faster search for the desired combination)
 OVERTIME_COUNTER_LIMIT = 100  # the number of shuffles, after which the task starts to go by itself until it finds the desired option, or reports that it does not exist
-DICT = "nounlist.txt"  # file with words
+DICT = "data\\nounlist.txt"  # file with words
 
 
 def get_words():  # loading words from file
@@ -119,9 +119,9 @@ def get_graph(words_horizontal, words_vertical, black_spaces, image_size, letter
     letters_pics = {}
     alphabets = string.ascii_uppercase
     for i in alphabets:
-        letters_pics[i] = SimpleImage(str(i)+'.png')
+        letters_pics[i] = SimpleImage('pic\\'+str(i)+'.png')
 
-    black = SimpleImage('BLACK.png')  # loading black cell picture
+    black = SimpleImage('pic\\BLACK.png')  # loading black cell picture
 
     final_image = SimpleImage.blank(image_size, image_size)  # creating an empty graphic file
     # filling with words horizontally
@@ -169,7 +169,7 @@ def main():
 
     # loading crossword data
     for i in range(NUMBER_OF_CROSSWORDS):
-        with open('pattern'+str(i)+'.json') as f:  # the crossword data is written in external .json files
+        with open('data\\pattern'+str(i)+'.json') as f:  # the crossword data is written in external .json files
             variables = json.load(f)
         words_count = variables['words_count']  # the number of words in the crossword
         words_length = variables['words_length']  # the length of each word
